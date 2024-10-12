@@ -1,18 +1,20 @@
 package com.spring.accounts.mapper;
 
-import com.spring.accounts.dto.CustomerDTO;
+import com.spring.accounts.dto.CustomerDto;
 import com.spring.accounts.entity.Customer;
+import lombok.experimental.UtilityClass;
 
+@UtilityClass
 public class CustomerMapper {
 
-        public static CustomerDTO mapToCustomerDto(Customer customer, CustomerDTO customerDto) {
+        public CustomerDto mapToCustomerDto(Customer customer, CustomerDto customerDto) {
             customerDto.setName(customer.getName());
             customerDto.setEmail(customer.getEmail());
             customerDto.setMobileNumber(customer.getMobileNumber());
             return customerDto;
         }
 
-        public static Customer mapToCustomer(CustomerDTO customerDto, Customer customer) {
+        public Customer mapToCustomer(CustomerDto customerDto, Customer customer) {
             customer.setName(customerDto.getName());
             customer.setEmail(customerDto.getEmail());
             customer.setMobileNumber(customerDto.getMobileNumber());
